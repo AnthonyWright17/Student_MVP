@@ -5,10 +5,10 @@ CREATE DATABASE mvp;
 \c mvp
 CREATE TABLE users (
   user_id BIGSERIAL PRIMARY KEY,
-  F_name varChar(30),
-  L_name varChar(30),
-  email varChar(90),
-  user_password varChar(10)
+  F_name varChar(255),
+  L_name varChar(255),
+  email varChar(255),
+  user_password varChar(15)
 );
 
 ALTER TABLE users 
@@ -57,5 +57,4 @@ ADD FK_from_id INTEGER REFERENCES messages_from(message_from_id) ON DELETE CASCA
 
 ALTER TABLE joined_thread
 ADD FK_sent_id INTEGER REFERENCES messages_to(message_to_id) ON DELETE CASCADE;
-
-
+\i seed.sql
