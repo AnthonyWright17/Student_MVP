@@ -1,4 +1,4 @@
-const client = require('pg/lib/native/client');
+
 const db = require('../../../data/data')
 
 const lgQueries = require('./loginQueries')
