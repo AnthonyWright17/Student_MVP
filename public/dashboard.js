@@ -178,7 +178,7 @@ const editUser = async(e) => {
   const formDataStr = JSON.stringify(valuesObj)
   console.log(formDataStr)
   try {
-    const result = await fetch('http://localhost:5000/dashboard.html', {
+    const result = await fetch('https://student-mvp.herokuapp.com/dashboard.html', {
       method: "PUT",
       headers:({
         'Content-Type': 'application/json',

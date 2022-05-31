@@ -85,7 +85,7 @@
       const formDataStr = JSON.stringify(Object.fromEntries(values))
       console.log(formDataStr)
       try {
-        const result = await fetch('http://localhost:5000/index.html', {
+        const result = await fetch('https://student-mvp.herokuapp.com/index.html', {
           method: "POST",
           headers:({
             'Content-Type': 'application/json',
@@ -107,10 +107,10 @@
       const values = [...formData.entries()];
       const formDataStr = JSON.stringify(Object.fromEntries(values))
       try {
-        const result = await fetch('http://localhost:5000/index.html', {
+        const result = await fetch('https://student-mvp.herokuapp.com/index.html', {
           method: "DELETE",
           headers:({
-            'Content-Type': 'application/json, text/html',
+            'Content-Type': 'application/json',
             'X-Custom-Header': 'DeleteUserForm'
           }),
           redirect: 'follow',
@@ -128,10 +128,10 @@
       const values = [...formData.entries()];
       const formDataStr = JSON.stringify(Object.fromEntries(values))
       try {
-        const result = await fetch('http://localhost:5000/index.html', {
+        const result = await fetch('https://student-mvp.herokuapp.com/index.html', {
           method: "PATCH",
           headers:({
-            'Content-Type': 'application/json, text/html',
+            'Content-Type': 'application/json',
             'X-Custom-Header': 'EditUserFrom'
           }),
           redirect: 'follow',
