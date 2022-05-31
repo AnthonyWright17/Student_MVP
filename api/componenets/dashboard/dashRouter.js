@@ -17,7 +17,7 @@ dashRouter.get('/:id', dashCont.getUserById)
 /**Create Posts */
 dashRouter.post('/:id/addPost', dashCont.createPost)
  
-dashRouter.put('/:id')
+dashRouter.put('/', dashCont.updateUser)
 
 dashRouter.delete('/remove', dashCont.deletePost)
 /**

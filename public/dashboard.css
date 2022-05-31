@@ -14,6 +14,7 @@
   --clr-text-main: #e5dada;
 }
 body {
+  display: block;
   margin: 0;
   font-family: 'Lato', sans-serif;
   line-height: 1.25;
@@ -336,7 +337,7 @@ color: white;
   font-weight: 500;
 }
 
-.edit-container input {
+.edit-container input, .edit-container button {
   display: block;
     height: 50px;
     width: 100%;

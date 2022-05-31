@@ -1,4 +1,5 @@
 
+const pool = require('../../../data/data')
 const db = require('../../../data/data')
 const dashQueries = require('./dashQueries')
 
@@ -34,7 +35,6 @@ const createPost = async (req, res) => {
   }
 }
 const deletePost = async (req, res) => {
-  console.log(req.body)
   const {post_id} = req.body;
   try {
     await db.query(dashQueries.deletePost, [post_id])
@@ -43,10 +43,28 @@ const deletePost = async (req, res) => {
     if(error) console.log(error)
   }
 }
-// const updateUser = async 
+const updateUser = async (req, res) => {
+  console.log(req.body)
+  const id = req.body.user_id;
+try {
+  const entityToUpdate = await db.query(dashQueries.getUserById, [id])
+  console.log(entityToUpdate.rows[0].f_name)
+  const firstName = req.body.f_name || entityToUpdate.rows[0].f_name;
+  const lastName = req.body.l_name || entityToUpdate.rows[0].l_name;
+  const email = req.body.email || entityToUpdate.rows[0].email;
+  const password = req.body.password || entityToUpdate.rows[0].user_password;
+
+  const result = await db.query(dashQueries.editUser, [firstName, lastName, email, password, id])
+  res.status(201)
+  
+} catch (error) {
+  if(error) console.log(error)
+}
+}
 
 module.exports = {
   getUserById,
   createPost,
   deletePost,
+  updateUser
 }

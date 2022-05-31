@@ -11,10 +11,11 @@ const yourPosts = document.querySelector('.your-posts')
 const displayPostContainer = document.querySelector('.display-posts')
 const editModal = document.querySelector('.edit-container')
 const editClose = document.querySelector('.edit-close')
-const editBtn = document.querySelector('#edit-button')
-const editFrom = document.querySelector('.edit-form')
+const editBtn = document.getElementById('edit-button')
+const editForm = document.querySelector('.edit-form')
+const editFormSubmit = document.querySelector('.edit-form-Btn')
 const deletePostBtn = document.querySelector('.deletePost')
-const centerContainer = document.querySelector('.cover')
+const centerContainer = document.querySelector('.cover-text')
 const navBar = document.querySelector('.nav')
 const aboutMeName = document.querySelector('.aboutMeName')
 const aboutMeEmail = document.querySelector('.aboutMeEmail')
@@ -170,34 +171,34 @@ const addPost = async (e) => {
 }
 const editUser = async(e) => {
   e.preventDefault();
-  const formData = new FormData(registerForm)
+  const formData = new FormData(editForm)
   const values = [...formData.entries()];
-  const formDataStr = JSON.stringify(Object.fromEntries(values))
+  const valuesObj = Object.fromEntries(values)
+  valuesObj['user_id'] = cookie
+  const formDataStr = JSON.stringify(valuesObj)
+  console.log(formDataStr)
   try {
-    const result = await fetch('${pathname}'/`${cookie}`, {
-      method: "PATCH",
+    const result = await fetch('http://localhost:5000/dashboard.html', {
+      method: "PUT",
       headers:({
-        'Content-Type': 'application/json, text/html',
+        'Content-Type': 'application/json',
         'X-Custom-Header': 'EditUserFrom'
       }),
       redirect: 'follow',
       body: formDataStr,
     })
-   console.log(response.json())
+   console.log(result.json())
   } catch (error) {
     if(error) throw error;
   }
 }
 editBtn.addEventListener('click', (e) => {
   editModal.style.display = "block";
-  centerContainer.style.display = "none"
- 
 })
-    
 editClose.addEventListener('click', (e) => {
   editModal.style.display = "none";
-  centerContainer.style.display = "flex"
 })
 
 shareBtn.addEventListener('click', addPost)
 deletePostBtn.addEventListener('click', deletePost)
+editFormSubmit.addEventListener('click', editUser)   
