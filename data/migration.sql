@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS mvp;
+-- DROP DATABASE IF EXISTS mvp;
 
-CREATE DATABASE mvp;
+-- CREATE DATABASE mvp;
 
-\c mvp
+-- \c mvp
 CREATE TABLE users (
   user_id BIGSERIAL PRIMARY KEY,
   F_name varChar(255),

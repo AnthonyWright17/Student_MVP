@@ -4,11 +4,91 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css">
+  <script rel="text/javacript" defer src="dashboard.js"></script>
+  <title>Document</title>
 </head>
 <body>
-  <strong>
-    <p1>Welcome to your Dashboard</p1>
-  </strong>
+    <div class="video-container">
+
+      <video autoplay muted loop id="myVideo">
+        <source src="https://player.vimeo.com/external/662525884.hd.mp4?s=65c0ad2f4802fa4eef088f224e81a44de7854209&profile_id=175&oauth_token_id=1027659655">
+      </video>
+    </div>
+  <div class="cover-text">
+    <section>
+      <span class="openNav" onclick="openNav()">&#9776;</span>
+      <div class="nav">
+        <a href="javascript:void(0)" class="navCloseBtn" onclick="closeNav()">&times;</a>
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="material-symbols-outlined">search</span>
+        <span class="material-symbols-outlined" id="edit-button">settings</span>
+        <span class="material-symbols-outlined">account_circle</span>
+        <span class="material-symbols-outlined">favorite</span>
+      </div>
+    </section>
+    <!-- Nav Section End -->
+    <div class="section1Wrapper">
+
+      <div class="welcomeWrapper">
+        <header class="welcome">
+          <strong>
+            <p1 class="welcomeMsg"></p1>
+          </strong>
+        </header>
+      </div> 
+
+      <div class="about-me-container">
+        <div class="About-Me">
+          <h1 class="aboutMeH1"></h1>
+          <h2 class="aboutMeName"></h2>
+          <h5 class="aboutMeEmail"></h5>
+        </div>
+      </div>
+
+    </div> 
+  <!-- Center Content -->
+      <div class="center-wrapper">
+          <div class="create-post">
+            <form class="create-post-form">
+              <h3 class="create-post-title">Create Post</h3>
+              <label for="post_title">Title:</label>
+              <input type="text" placeholder="Name Your Post" name="post_title" id="post_title">
+              <label for="post_content">Content:</label>
+              <textarea name="post_content" id="post_content" placeholder="Start writing......"></textarea>
+              <button id="Share-post">Share</button>
+          </form>
+        </div>
+        <div class="display-posts">
+          <div class="your-posts">
+            <span class="deletePost"></span>
+              <h3 class="yp_title">Your Feed</h3>
+              <p1 class="yp_text"></p1>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="edit-container">
+          <form class="edit-form">
+          
+              <span class="edit-close">&times;</span>
+              <h3>Edit</h3><br>
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="f_name">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="F_name">
+              <label for="email" >Email</label>
+              <input type="text" id="email" name="email">
+              <label for="password">Password</label>
+              <input type= "password" id="password" name="password"><br>
+
+              <input class="edit-form-Btn" type="submit" value="Submit">
+          
+          </form>
+        </div>
+      </section>
+  </div>
 </body>
 </html>

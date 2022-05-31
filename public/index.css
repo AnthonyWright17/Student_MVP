@@ -1,0 +1,180 @@
+:root{
+  --primary-color: #001a33;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  line-height: 36px;
+  font-size: 16px;
+}
+
+/* Welcome txt */
+.hd-welcome {
+  font-family:'Montserrat', sans-serif;
+  font-size: 250%;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 1.25%;
+}
+
+/* Resize Welcome msg based on media query */
+@media (max-width: 414px) {
+  .hd-welcome{
+    font-family:'Montserrat', sans-serif;
+    font-size: 187%;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 1.25%;
+  }
+}
+
+/* Subtext for Welcome msg */
+ .hd-subtext {
+  font-family:'Montserrat', sans-serif;
+  font-size: 130%;
+  font-weight: 385;
+  line-height: 1;
+  margin-bottom: 3%;
+}
+
+/* Cover section for video */
+.cover {
+
+position: relative;
+height: 100vh;
+display: flex;
+
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+text-align: center;
+padding: 0 20px;
+color: white;
+
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* No scroll bars */
+  overflow: hidden;
+  background: var(--primary-color);
+}
+
+.video-container video{
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.video-container::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 5, 0);
+}
+.cover-text {
+  display: block;
+  z-index: 10;
+}
+
+
+.login-container, .register-container, .delete-container, .edit-container{
+  max-height: 520px;
+  max-width: 400px;
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 15;
+}
+.lg-close, .reg-close, .del-close, .edit-close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.lg-close, .reg-close, .del-close, .edit-close:hover,
+.lg-close, .reg-close, .del-close, .edit-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form{
+    min-height: 520px;
+    min-width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    object-fit: cover;
+    font-family: 'Lato',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+.login-form-Btn, .register-form-Btn, .delete-form-Btn, .edit-form-Btn{
+    object-fit: contain;
+    overflow: hidden;
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}

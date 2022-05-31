@@ -12,7 +12,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 
 
-app.use('/login.html', loginRoute);
+app.use('/index.html', loginRoute);
 
 app.use('/dashboard.html', dashboardRoute);
 

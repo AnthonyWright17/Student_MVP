@@ -4,18 +4,117 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main</title>
-</head>
-<body>
-  <header class="welcome">Welcome to Streams</header><br><br>
-  <button class="loginBtn">Login In</button>
-  <script>
-    let body = document.body;
-    let loginBtn = document.querySelector('.loginBtn')
-    loginBtn.addEventListener('click', (e) => {
-      location.assign('login.html')
-    })
-  </script>
+  <script type="text/javscript" defer src="index.js"></script>
   
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+  <script type="text/javascript" defer src="index.js" ></script>
+  <title>Landing</title>
+</head>
+<body transform="no">
+  <section class="cover">
+    <!-- Background Vid Loop -->
+    <div class="video-container">
+
+      <video autoplay muted loop id="myVideo">
+        <source src="https://player.vimeo.com/progressive_redirect/playback/363642440/rendition/2160p?loc=external&oauth2_token_id=1027659655&signature=159aac4d5d915afe2d688c7edcff7b14d9e96007a6ae0c40d68345693f1e0f6e">
+      </video>
+      ::after
+    </div>
+      <!-- Overlay Content -->
+    <div class="cover-text">
+      <h1 class="hd-welcome">Welcome to Streams</h1>
+        <h3 class="hd-subtxt">Content Delivered Your Way</h3>
+      <div class="cover-buttons">
+        <button class="get-Started">Get Started</button>
+        <button class="login-button">Login In</button>
+        <!-- <button class="delete-button">Delete</button>
+        <button class="edit-button">Edit</button> -->
+      </div>  
+    </div>
+  </section>
+
+  <!-- Login Modal -->
+  <section>
+    <div class="login-container">
+      <form action="index.html" method="POST" class="loginform">
+       
+          <span class="lg-close">&times;</span>
+          <h3>Login</h3><br>
+          <label for="email">Email</label><br>
+          <input type="text" id="email" name="email"><br>
+          <label for="password">Password</label><br>
+          <input type= "password" id="password" name="password"><br><br>
+          <input class="login-form-Btn" type="submit" value="Submit">
+       
+      </form>
+    </div>
+  </section>
+  <!-- Login Modal End -->
+
+  <!-- Get Started Model -->
+  <section>
+    <div class="register-container">
+      <form action="#" method="#" class="register-form">
+       
+          <span class="reg-close">&times;</span>
+          <h3>Register</h3><br>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName">
+          <label for="email" >Email</label>
+          <input type="text" id="email" name="email">
+          <label for="password">Password</label>
+          <input type= "password" id="password" name="password"><br>
+
+          <input class="register-form-Btn" type="submit" value="Submit">
+       
+      </form>
+    </div>
+  </section>
+<!-- Get Started Modal End -->
+<section>
+    <div class="delete-container">
+      <form class="delete-form">
+       
+          <span class="del-close">&times;</span>
+          <h3>Delete</h3><br>
+          <label for="email" >Email</label>
+          <input type="text" id="email" name="email">
+
+          <input class="delete-form-Btn" type="submit" value="Submit">
+       
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="edit-container">
+      <form class="edit-form">
+       
+          <span class="edit-close">&times;</span>
+          <h3>Edit</h3><br>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="f_name">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="F_name">
+          <label for="email" >Email</label>
+          <input type="text" id="email" name="email">
+          <label for="password">Password</label>
+          <input type= "password" id="password" name="password"><br>
+
+          <input class="edit-form-Btn" type="submit" value="Submit">
+       
+      </form>
+    </div>
+  </section>
+
+
 </body>
 </html>

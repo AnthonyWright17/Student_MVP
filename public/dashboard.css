@@ -1,0 +1,355 @@
+*,
+*::before,
+**::after{
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em;
+}
+:root{
+  --clr-bg-dark: #303633;
+  --clr-bg-light: #7ea2aa;
+  --clr-accent-bright: #8be8cb;
+  --clr-accent-soft: #888DA7;
+  --clr-accent-light: #9c7a97;
+  --clr-text-main: #e5dada;
+}
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.25;
+  font-size: 16px;
+  background-color: var(--clr-bg-dark);
+}
+.cover {
+
+position: relative;
+height: 100vh;
+display: flex;
+
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+text-align: center;
+padding: 0 20px;
+color: white;
+
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* No scroll bars */
+  overflow: hidden;
+  background: var(--primary-color);
+}
+
+.video-container video{
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cover-text{
+  display: block;
+  z-index: 10;
+  object-fit: contain;
+}
+
+.openNav{
+  position: absolute;
+   top: 5;
+  left: 5; 
+   margin-top: 4px;
+  margin-left: 4px; 
+  cursor: pointer;
+  font-size: 45px;
+  color: var(--clr-bg-light);
+}
+.nav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  padding-top: 2px;
+  transition: 0.5s;
+  background-color: #111;
+  /* background-color: rgba(255,255,255,0.13); */
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.nav span{
+  padding: 8px 8px 8px 32px;
+  color: #818181;
+  transition: 0.3s;
+ 
+}
+.material-symbols-outlined{
+  flex: 1;
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 50px;  /* Preferred icon size */
+  color: #818181;
+  line-height: 1;
+  /* min-width: 2.5vw; */
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  text-align: center;
+}
+.nav .navCloseBtn {
+  display: block;
+  padding: 8px 8px 8px 32px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: #818181;
+  text-decoration: none;
+}
+.nav>*:hover,
+.nav>*:focus{
+  color: var(--clr-accent-bright);
+  cursor: pointer;
+}
+.section1Wrapper{
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5rem;
+  font-family: inherit;
+  line-height: 1;
+  
+  color: antiquewhite;
+  padding: 3rem;
+  margin-left: 3rem;
+  margin-right: auto;
+}
+.welcomeWrapper{
+  flex: 1;
+  width: 90%;
+  font-size: 5em;
+  padding: 1em;
+  margin-top: 0.5rem;
+  margin-bottom: auto;
+  background-color: rgba(255,255,255,0.13);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+.about-me-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-self: start;
+  text-align: center;
+  margin-top: 2rem;
+  
+  
+}
+.About-Me{
+  flex: 1;
+  max-width: 20%;
+  padding: 1em;
+  margin-left: 0;
+  margin-right: auto;
+  font-size: 1.5rem;
+  background-color: rgba(255,255,255,0.13);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+.center-wrapper{
+  width: fit-content;
+  padding-top: 5em;
+  margin-left: 10em;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.create-post{
+  flex: 1;
+  margin-top: 2rem;
+}
+
+.create-post form{
+  height: 520px;
+  width: 400px;
+  background-color: rgba(255,255,255,0.13);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+    
+}
+.create-post-form *{
+  object-fit: cover;
+  font-family: 'Lato',sans-serif;
+  color: hsl(0, 0%, 0%);
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+.create-post-title{
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
+.create-post-form label{
+  margin-top: 20px;
+  font-size: 2em;
+  font-weight: 500;
+}
+.create-post-form input, button, textarea{
+  display: block;
+  min-height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 1em;
+  font-weight: 300;
+}
+.create-post-form textarea{
+  height: 300px;
+}
+.create-post-form button{
+  display: inline-block;
+  object-fit: contain;
+  overflow: hidden;
+  margin-top: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.07);
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.create-post-form *::placeholder{
+  color: #e5e5e5;
+}
+.display-posts{
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  color: #ffffff;
+  background-color: #111;
+  border: 5px solid #111;
+}
+.your-posts{
+  background-color: rgba(255,255,255,0.13);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  backdrop-filter: blur(10px);
+  padding: 1em;
+  border-radius: 5px;
+}
+.post-title, .post-text{
+  text-align: left;
+  margin-left: 1em;
+  padding: 1em;
+}
+.post-title{
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.post-text{
+  margin-top: 1em;
+  margin-bottom: 2rem;
+  padding: 2em;
+}
+.edit-container {
+  max-height: 520px;
+  max-width: 400px;
+  display: none;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  z-index: 15;
+}
+.edit-close, .deletePost {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.edit-container form *{
+  object-fit: cover;
+  font-family: 'Lato',sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+.edit-container form h3{
+  font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.edit-container form label{
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.edit-container input {
+  display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.edit-close, .deletePost:hover,
+.edit-close, .deletePost:focus{
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
