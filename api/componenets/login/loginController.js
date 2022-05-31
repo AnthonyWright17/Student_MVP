@@ -1,3 +1,4 @@
+const client = require('pg/lib/native/client');
 const db = require('../../../data/data')
 
 const lgQueries = require('./loginQueries')
@@ -63,8 +64,8 @@ if(customHeader !== 'RegisterUserForm') return next();
 const {firstName, lastName, email, password} = req.body
 console.log('create user req body', req.body)
 try {
-  console.log('createUserTry')
-  const create = await db.query(lgQueries.createUser, [firstName, lastName, email, password]);
+  const client = await db.connect();
+  const create = await client.query(lgQueries.createUser, [firstName, lastName, email, password]);
   console.log(create)
   next();
 } catch (error) {
@@ -77,7 +78,8 @@ const redirectTo = async (req, res) => {
 const {email, password} = req.body
   try {
     console.log('redirectto try')
-    const { rows } = await db.query(lgQueries.getUserIdByEmailNdPsswrd, [email, password])
+    const client = await db.connect();
+    const { rows } = await client.query(lgQueries.getUserIdByEmailNdPsswrd, [email, password])
 
     console.log('redirectto query at 0', rows[0])
     const id = rows[0].user_id
@@ -101,7 +103,8 @@ const updateUser = async (req, res) => {
     });
     
     const queryStr =`${setStr}${idStr}`
-    await db.query(queryStr)
+    const client = await db.connect()
+    await client.query(queryStr)
 
     const {rows} = db.query(lgQueries.getUserIdByEmailNdPsswrd, [email, user_password])
     
@@ -115,7 +118,8 @@ const removeUser = async (req, res) => {
   const {email} = req.body
 
   try {
-    const {rows} = await db.query(lgQueries.deleteUser, [email])
+    const client = await db.connect()
+    const {rows} = await client.query(lgQueries.deleteUser, [email])
     res.json({message:"User Deleted"})
   } catch (error) {
     if (error) console.log(error)
